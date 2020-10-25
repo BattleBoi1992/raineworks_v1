@@ -12,7 +12,7 @@ export default new Vuex.Store({
     themeToggle: false, // Theme boolean toggle. 
     loading: false, // Global loading indicator. 
     menuActive: false, // Mobile menu boolean is used to alter the body class to change overflow.
-    maintenance: true, // If maintenance is true all traffic will be re-routed to the under construction splash page. 
+    maintenance: false, // If maintenance is true all traffic will be re-routed to the under construction splash page. 
 
     brandIcon: brandIcon,
     logoDark: logoDark,

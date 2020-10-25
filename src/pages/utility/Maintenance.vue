@@ -5,18 +5,19 @@
          <img class="brand-large" v-else :src="$store.state.logoLight"/>
       </header>
       <div>
-         <lottie-animation path="@/assets/lottie/working-man.json"/>
       </div>
    </div>
 </template>
 
 <script>
 
+// import workingMan from '@/assets/lottie/working-man.json';
+
 export default {
    name: 'Maintenance',
    data() {
       return {
-         //
+         // workingMan: workingMan,
       }
    },
    components: {
