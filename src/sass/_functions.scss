@@ -1,0 +1,14 @@
+@import '@/sass/variables';
+@import '@/sass/mixins';
+
+@function em($pixels, $context: 16px) {
+   @return ($pixels / $context) * 1em;
+}
+
+@function col-width($cols, $gap) {
+   @return (100% - $gap * ($cols - 1)) / $cols;
+}
+
+@function row-height($rows, $gap) {
+   @return (100% - $gap * ($rows - 1)) / $rows;
+}

@@ -1,0 +1,33 @@
+// Theme variable
+$theme: light;
+
+:export {
+   theme: $theme;
+}
+
+// Fonts
+$standard-text: 'Roboto';
+
+// Screen sizes
+$mobile-portrait: 320px;
+$mobile-landscape: 480px;
+$tablet-portrait: 600px;
+$tablet-landscape: 801px;
+$max-width: 2000px;
+
+// brand colors. 
+$primary-one: #3C068F;
+$primary-two: #1B46B0;
+
+// Light theme colors. 
+$background-light: #FFFFFF; 
+$accent-light: #E7E7E7;
+$text-color-light: #000000;
+
+// Dark theme colors. 
+$background-dark: #000000; 
+$accent-dark: #1A1A1A;
+$text-color-dark: #FFFFFF;
+
+// Transitions 
+$standard-transition: 0.3s;

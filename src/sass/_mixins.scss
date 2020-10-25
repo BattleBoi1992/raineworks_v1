@@ -1,0 +1,14 @@
+@import '@/sass/variables';
+
+// Add any google font family.
+@mixin google-font($font) {
+   $font: unquote($font); 
+   @import url(https://fonts.googleapis.com/css2?family=#{$font});
+}
+
+@mixin grid($cols, $rows, $gap) /* Gap must be entered as a percentage. */ { 
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(col-width($cols, $gap), 1fr));
+   grid-template-rows: repeat(auto-fill, minmax(row-height($rows, $gap), 1fr));
+   gap: $gap;
+}

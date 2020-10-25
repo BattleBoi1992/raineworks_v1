@@ -1,7 +1,7 @@
 <template>
    <div class="home">
       <Nav/>
-      <p :class="theme">{{theme}}</p>
+
    </div>
 </template>
 
@@ -12,7 +12,6 @@ import Nav from '@/components/global/Nav'
 export default {
    name: 'Home', 
    components: {
-      //
       Nav,
    }, 
    data() {
@@ -24,7 +23,7 @@ export default {
       theme() {
          return this.$store.state.theme
       }
-   }
+   },
 }
 </script>
 
