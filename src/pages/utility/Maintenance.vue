@@ -1,8 +1,8 @@
 <template>
    <div class="maintenance">
       <header>
-         <img class="brand-large" v-if="theme == 'dark'" :src="$store.state.logoDark"/>
-         <img class="brand-large" v-else :src="$store.state.logoLight"/>
+         <img class="brand-large" v-if="theme == 'dark'" :src="$store.state.settings.logoDark"/>
+         <img class="brand-large" v-else :src="$store.state.settings.logoLight"/>
       </header>
       <div>
       </div>
@@ -25,7 +25,7 @@ export default {
    },
    computed: {
       theme() {
-         let theme = this.$store.state.theme
+         let theme = this.$store.state.settings.theme
          return theme
       },
    },

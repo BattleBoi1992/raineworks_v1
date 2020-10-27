@@ -144,20 +144,20 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if(to.matched.some(record => record.meta.checkMaintenance)) { 
-    if(store.state.maintenance) {
-      next({ name: 'Maintenance' });
+    if(store.state.settings.maintenance) {
+      next({ name: 'Maintenance'});
     } else {
       next();
     }
-  } else if(to.matched.some(record => record.name == 'Maintenance')) {
-    if(!store.state.maintenance) {
-      next({ name: 'Home' });
-    } else{
-      next();
+  } else if(to.matched.some(record => record.path == '/maintenance')) {
+    if(!store.state.settings.maintenance) {
+      next({ name: 'About' });
+    } else {
+      next()
     }
   } else {
     next();
   }
-});
+})
 
 export default router

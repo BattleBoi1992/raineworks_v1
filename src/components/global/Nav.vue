@@ -2,9 +2,9 @@
    <header class="header">
       <div class="nav-bar">
          <router-link to="/" class="brand-icon">
-            <img class="mobile-icon" v-if="window.width < 801" :src="$store.state.brandIcon"/>
-            <img class="desk-icon" v-else-if="theme == 'dark'" :src="$store.state.logoDark"/>
-            <img class="desk-icon" v-else :src="$store.state.logoLight"/>
+            <img class="mobile-icon" v-if="window.width < 801" :src="$store.state.settings.brandIcon"/>
+            <img class="desk-icon" v-else-if="theme == 'dark'" :src="$store.state.settings.logoDark"/>
+            <img class="desk-icon" v-else :src="$store.state.settings.logoLight"/>
          </router-link>
 
          <nav class="link-container">
@@ -17,7 +17,7 @@
                <!-- Theme toggle button -->
                <li class="themeBtn" @click="toggleTheme">
                   <i v-if="theme !== 'dark'" class="fas fa-moon"></i>
-                  <i v-else class="fas fa-sun"></i>
+                  <i v-else class="fas fa-lightbulb"></i>
                </li>
 
                <!-- Menu button for small displays -->
@@ -109,11 +109,11 @@ export default {
    }, 
    computed: {
       theme() {
-         let theme = this.$store.state.theme
+         let theme = this.$store.state.settings.theme
          return theme
       },
       menuState() {
-         let menuState = this.$store.state.menuActive
+         let menuState = this.$store.state.settings.menuActive
          return menuState
       },
    },
@@ -230,6 +230,8 @@ export default {
 
    .themeBtn {
       padding: 4px;
+      width: 20px;
+      text-align: center;
       outline: none;
       font-size: em(18px);
       cursor: pointer;

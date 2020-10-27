@@ -2,14 +2,20 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
+import dotenv from 'dotenv';
 
 Vue.config.productionTip = false;
 
-Vue.use(LottieAnimation);
+dotenv.config()
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app');
+store.dispatch('loadFlags')
+
+setTimeout(launchApp, 500)
+
+function launchApp() {
+  new Vue({
+    router,
+    store,
+    render: h => h(App)
+  }).$mount('#app');
+}
