@@ -4,24 +4,29 @@
          <img class="brand-large" v-if="theme == 'dark'" :src="$store.state.settings.logoDark"/>
          <img class="brand-large" v-else :src="$store.state.settings.logoLight"/>
       </header>
-      <div>
+      <div class="animation-container">
+         <LottiePlayer :name="workinMan.name" :path="workinMan.path" :loop="workinMan.loop"/>
       </div>
    </div>
 </template>
 
 <script>
 
-// import workingMan from '@/assets/lottie/working-man.json';
+import LottiePlayer from '@/components/tools/Lottieplayer.vue';
 
 export default {
    name: 'Maintenance',
    data() {
       return {
-         // workingMan: workingMan,
+         workinMan: {
+            name: 'Working-Man',
+            path: 'https://assets3.lottiefiles.com/packages/lf20_vo0a1yca.json',
+            loop: true
+         },
       }
    },
    components: {
-      //
+      LottiePlayer,
    },
    computed: {
       theme() {
@@ -35,7 +40,8 @@ export default {
 <style lang='scss'>
 
    .maintenance {
-      height: 100vh;
+      height: 100%;
+      padding: 32px;
 
       header {
          text-align: center;
@@ -44,7 +50,12 @@ export default {
 
    .brand-large {
       width: 300px;
-      margin: 48px auto;
+      margin: auto;
+   }
+
+   .animation-container {
+      width: 50%;
+      margin: auto;
    }
 
 </style>

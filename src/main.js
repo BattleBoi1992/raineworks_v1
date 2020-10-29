@@ -10,7 +10,7 @@ dotenv.config()
 
 store.dispatch('loadFlags')
 
-setTimeout(launchApp, 500)
+setTimeout(launchApp, 1000)
 
 function launchApp() {
   new Vue({
